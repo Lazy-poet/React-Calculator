@@ -18,9 +18,9 @@ this.handleDecimal = this.handleDecimal.bind(this);
   handleNumClick(button){
     button = button.target.innerHTML;
     if (button === "=")this.handleResult();
-    else if(this.state.operator == "0") this.setState({
+    else if(this.state.operator === "0") this.setState({
       operator: button
-    })
+    });
     else if(button === "AC") this.handleClear();
     else{
 this.setState({operator: this.state.operator + button})
@@ -36,7 +36,7 @@ this.setState({operator: this.state.operator + button})
       }
   handleOperator(e){
     let operators = ["+", "-", "*", "/"];
-    if(this.state.operator == "") this.setState({operator: this.state.display + e.target.value});
+    if(this.state.operator === "") this.setState({operator: this.state.display + e.target.value});
     else if(operators.indexOf(this.state.operator[this.state.operator.length-1]) <0)
 this.setState({
 operator: this.state.operator + e.target.value
