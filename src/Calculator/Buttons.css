@@ -9,22 +9,41 @@ align-items: center;
   width: 330px;
   border: 2px black solid;
   background-color: #000001;
+  border-radius: 15px;
 }
 
 button {
   width: 70px;
   height: 70px;
   border-radius: 50%;
+  border: none;
   background-color: #727372;
   color: #fff;
   line-height: 1em;
   text-align: center;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   font-size: 20px;
   font-weight: 700;
 }
 
 button:active {
   background-color: #d5d4d5;
+}
+
+button:hover {
+  outline: none;
+  border: none;
+}
+
+button:focus {
+  outline: none;
+  border: none;
+}
+
+button:active {
+  outline: none;
+  border: none;
 }
 
 button:nth-child(4n + 4) {
@@ -48,7 +67,7 @@ button:nth-child(-n + 3):active {
 
 .display {
   display: block;
-  margin-top: 150px;
+  margin-top: 20px;
   margin-right: 20px;
   font-size: 50px;
   text-align: right;
@@ -66,6 +85,14 @@ button:nth-child(-n + 3):active {
   width: 100%;
   grid-gap: 10px;
   justify-items: end;
-  margin: 0 10px 50px;
+  margin: 0 10px 30px;
+}
+
+#operator {
+  color: #fff;
+  margin-top: 75px;
+  margin-left: 15px;
+  height: 30px;
+  color: #e38d0b;
 }
 /*# sourceMappingURL=Buttons.css.map */
