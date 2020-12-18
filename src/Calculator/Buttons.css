@@ -76,8 +76,8 @@ button:nth-child(-n + 3):active {
       -ms-flex-pack: end;
           justify-content: flex-end;
   margin-top: 20px;
-  padding-right: 20px;
-  font-size: 2rem;
+  padding-right: 25px;
+  font-size: 2.3rem;
   text-align: right;
   height: 75px;
   color: #fff;
