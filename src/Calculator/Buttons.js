@@ -7,8 +7,8 @@ return(
 
 <div className="buttons">
   <button  onClick={this.props.numClick} id="clear">AC</button>
-  <button>+/-</button>
-  <button>%</button>
+  <button onClick={this.props.plusMinus}>+/-</button>
+  <button onClick={this.props.percent}>%</button>
   <button id="divide" value="/"  onClick={this.props.operatorClick}>/</button>
   <button id="seven" onClick={this.props.numClick}>7</button>
   <button id="eight" onClick={this.props.numClick}>8</button>
@@ -24,7 +24,7 @@ return(
   <button id="add" value="+" onClick={this.props.operatorClick}>+</button>
   <button id="zero" onClick={this.props.numClick}>0</button>
   <button id="decimal" onClick={this.props.decimal}>.</button>
-  <button>SCI</button>
+  <button onClick={this.props.numClick}>C</button>
   <button id="equals"  onClick={this.props.numClick}>=</button>
 </div>
 )}

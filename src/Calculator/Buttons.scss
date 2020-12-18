@@ -54,10 +54,12 @@ background-color: #fff;}
 }
 
 .display {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   margin-top: 20px;
-  margin-right: 20px;
-  font-size: 50px;
+  padding-right: 20px;
+  font-size: 2rem;
   text-align: right;
   height: 75px;
   color: #fff;
@@ -73,9 +75,16 @@ background-color: #fff;}
 
 }
 #operator{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   color: #fff;
   margin-top: 75px;
-  margin-left: 15px;
-  height: 30px;
-  color: #e38d0b
+  padding-left: 15px;
+  height: 50px;
+  color: #e38d0b;
+  background-color: transparent;
+  max-width: 256px;
+  overflow: hidden;
+  white-space: pre;
 }

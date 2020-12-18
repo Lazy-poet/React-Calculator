@@ -13,18 +13,24 @@ this.state ={
 this.handleNumClick = this.handleNumClick.bind(this);
 this.handleOperator = this.handleOperator.bind(this);
 this.handleDecimal = this.handleDecimal.bind(this);
+this.handlePercent = this.handlePercent.bind(this);
+this.handlePlusMinus = this.handlePlusMinus.bind(this);
+
   }
 
   handleNumClick(button){
+    if (this.state.operator.length > 8)this.setState({operator: this.state.operator});
     button = button.target.innerHTML;
     if (button === "=")this.handleResult();
+    else if(button === "AC") this.handleClear();
     else if(this.state.operator === "0") this.setState({
       operator: button
     });
-    else if(button === "AC") this.handleClear();
-    else{
+    
+    else if(button==="C") this.handleDelete();
+    else if(this.state.operator.length <= 16)
 this.setState({operator: this.state.operator + button})
-    }
+    
   };
   handleDecimal(e){
     if(this.state.operator ===""){
@@ -46,13 +52,26 @@ else { var regex =  /-$|\+$|\/$|\*$/;
 }
   }
   handleResult(){
+    if(eval(this.state.operator.length<=12))
 this.setState({display: eval(this.state.operator), operator: ""});
+else this.setState({display: eval(this.state.operator).toExponential(), operator: ""})
 }
 handleClear(){
   this.setState({
     display: 0,
     operator: ""
   })
+}
+handlePercent(){
+  this.setState({display: this.state.operator / 100, operator: ""})
+}
+handlePlusMinus(){
+  try{if(this.state.operator ==="") this.setState({operator: ""});
+  else this.setState({operator: this.state.operator * -1})}
+  catch(err){this.setState({display: "error"})}
+}
+handleDelete(){
+  this.setState({operator: this.state.operator.slice(0, this.state.operator.length-1)})
 }
 
   render(){
@@ -67,6 +86,8 @@ handleClear(){
    operatorClick={this.handleOperator}
    result = {this.handleResult}
    decimal = {this.handleDecimal}
+   percent ={this.handlePercent}
+   plusMinus ={this.handlePlusMinus}
    />
   </div>
   )
